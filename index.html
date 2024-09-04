@@ -545,51 +545,5 @@ $(document).ready(function() {
 	    };
 	}());
  
-	fillInPage();
-
-	window.onload = function () {
-	    if (window.history && window.history.pushState) {
-
-	        window.onpopstate = function () {
-	            var hashLocation = location.hash;
-	            var hashSplit = hashLocation.split("#!/");
-	            var hashName = hashSplit[1];
-	            if (hashName !== '') {
-	                var hash = window.location.hash;
-	                if (hash === '') {
-	                    //  alert('Back button was pressed.');
-	                    window.location = back_link;
-	                    return false;
-	                }
-	            }
-	        };
-	        window.history.pushState('forward', null, '#forward');
-	    }
-	    else {
-	        var ignoreHashChange = true;
-	        window.onhashchange = function () {
-	            if (!ignoreHashChange) {
-	                ignoreHashChange = true;
-	                var hashLocation = location.hash;
-	                var hashSplit = hashLocation.split("#!/");
-	                var hashName = hashSplit[1];
-
-	                if (hashName !== '') {
-	                    var hash = window.location.hash;
-	                    if (hash === '') {
-	                        //  alert('Back button was pressed.');
-	                        window.location = back_link;
-	                        return false;
-	                    }
-	                }
-	            }
-	            else {
-	                ignoreHashChange = false;
-	            }
-	        };
-	        window.history.pushState('forward', null, '#forward');
-	    }
-	}
-
-});
+	
 </script>
